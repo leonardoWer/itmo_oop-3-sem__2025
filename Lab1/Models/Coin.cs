@@ -1,5 +1,4 @@
-﻿namespace Lab1;
-
+﻿namespace Lab1.Models;
 public enum Coin
 {
     OneRuble = 1,

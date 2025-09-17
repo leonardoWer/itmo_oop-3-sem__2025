@@ -1,13 +1,12 @@
-﻿namespace Lab1;
+﻿namespace Lab1.Interfaces;
 
 public interface IVendingMachine
 {
+    void TurnOn();
+    void TurnOff();
     void DisplayProducts();
     void InsertCoin(decimal value);
     void SelectProduct(int productIndex);
     void CompleteTransaction();
     void CancelTransaction();
-    
-    decimal CurrentBalance { get; }
-    IEnumerable<Product> GetAvailableProducts(); // Отдаём продукты только для чтения
 }

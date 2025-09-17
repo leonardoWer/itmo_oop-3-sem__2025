@@ -11,6 +11,7 @@
         <RootNamespace>Lab1</RootNamespace>
         <AssemblyName>Lab1</AssemblyName>
         <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+        <LangVersion>latest</LangVersion>
         <FileAlignment>512</FileAlignment>
         <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     </PropertyGroup>
@@ -40,10 +41,10 @@
         <Reference Include="System.Xml"/>
     </ItemGroup>
     <ItemGroup>
-        <Compile Include="interfaces\IVendingMachine.cs" />
-        <Compile Include="objects\Coin.cs" />
-        <Compile Include="objects\Product.cs" />
-        <Compile Include="objects\VendingMachine.cs" />
+        <Compile Include="Interfaces\IVendingMachine.cs" />
+        <Compile Include="Models\Coin.cs" />
+        <Compile Include="Models\Product.cs" />
+        <Compile Include="Models\VendingMachine.cs" />
         <Compile Include="Program.cs"/>
         <Compile Include="Properties\AssemblyInfo.cs"/>
     </ItemGroup>
