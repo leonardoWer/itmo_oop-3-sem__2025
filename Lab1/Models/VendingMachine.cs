@@ -6,8 +6,15 @@ using Interfaces;
 
 public class VendingMachine : IVendingMachine
 {
+    private AdminPanel adminPanel;
     private List<Product> products = new List<Product>();
     private decimal currentBalance = 0;
+    private decimal earnedMoney = 0;
+
+    public VendingMachine(Admin admin)
+    {
+        adminPanel = new AdminPanel(this, admin);
+    }
 
     public void TurnOn()
     {
@@ -82,9 +89,14 @@ public class VendingMachine : IVendingMachine
         }
     }
 
-    public void TurnOff()
+    public void AddProduct(Product product)
     {
-        throw new NotImplementedException();
+        products.Add(product);
+    }
+    
+    public List<Product> GetProducts()
+    {
+        return products;
     }
 
     public void DisplayProducts()
@@ -132,9 +144,10 @@ public class VendingMachine : IVendingMachine
         if (currentBalance >= product.Price)
         {
             currentBalance -= product.Price;
+            earnedMoney += product.Price;
             product.Count--;
             Console.WriteLine($"Выдано: {product.Icon} {product.Name}, 1шт.");
-            Console.WriteLine($"Остаток на балансе: {currentBalance} руб.");
+            CompleteTransaction();
         }
         else
         {
@@ -156,5 +169,20 @@ public class VendingMachine : IVendingMachine
     {
         Console.WriteLine($"Операция отменена. Возвращено: {currentBalance} руб.");
         currentBalance = 0;
+    }
+
+    public decimal GetEarnedMoney()
+    {
+        return earnedMoney;
+    }
+    public void CollectEarnedMoney()
+    {
+        // Как бы забираем прибыль
+        earnedMoney = 0;
+    }
+
+    public void LoginViaAdmin(string login, string password)
+    {
+        adminPanel.Login(login, password);
     }
 }

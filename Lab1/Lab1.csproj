@@ -42,7 +42,8 @@
     </ItemGroup>
     <ItemGroup>
         <Compile Include="Interfaces\IVendingMachine.cs" />
-        <Compile Include="Models\Coin.cs" />
+        <Compile Include="Models\Admin.cs" />
+        <Compile Include="Models\AdminPanel.cs" />
         <Compile Include="Models\Product.cs" />
         <Compile Include="Models\VendingMachine.cs" />
         <Compile Include="Program.cs"/>
