@@ -5,11 +5,11 @@
     <PropertyGroup>
         <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
         <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-        <ProjectGuid>{4BE61688-CD31-4101-85C8-6F87BDBA96B7}</ProjectGuid>
+        <ProjectGuid>{E664A2FB-8664-4F7C-BD12-CC0C56343EDB}</ProjectGuid>
         <OutputType>Exe</OutputType>
         <AppDesignerFolder>Properties</AppDesignerFolder>
-        <RootNamespace>OOP</RootNamespace>
-        <AssemblyName>OOP</AssemblyName>
+        <RootNamespace>Lab1</RootNamespace>
+        <AssemblyName>Lab1</AssemblyName>
         <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
         <FileAlignment>512</FileAlignment>
         <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -40,8 +40,15 @@
         <Reference Include="System.Xml"/>
     </ItemGroup>
     <ItemGroup>
+        <Compile Include="interfaces\IVendingMachine.cs" />
+        <Compile Include="objects\Coin.cs" />
+        <Compile Include="objects\Product.cs" />
+        <Compile Include="objects\VendingMachine.cs" />
         <Compile Include="Program.cs"/>
         <Compile Include="Properties\AssemblyInfo.cs"/>
+    </ItemGroup>
+    <ItemGroup>
+      <Content Include="README.md" />
     </ItemGroup>
     <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets"/>
     <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

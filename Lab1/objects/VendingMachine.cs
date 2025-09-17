@@ -1,4 +1,4 @@
-﻿namespace DefaultNamespace;
+﻿namespace Lab1;
 
 public class VendingMachine : IVendingMachine
 {
@@ -7,6 +7,6 @@ public class VendingMachine : IVendingMachine
 
     public void DisplayProducts()
     {
-        products.forE
+        
     }
 }

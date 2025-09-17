@@ -1,4 +1,4 @@
-﻿namespace DefaultNamespace;
+﻿namespace Lab1;
 
 public interface IVendingMachine
 {
