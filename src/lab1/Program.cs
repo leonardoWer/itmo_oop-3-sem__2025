@@ -1,4 +1,5 @@
 namespace OOP
+
 {
     internal class Program
     {
