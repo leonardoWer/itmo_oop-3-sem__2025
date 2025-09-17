@@ -7,13 +7,24 @@ using Interfaces;
 public class VendingMachine : IVendingMachine
 {
     private AdminPanel adminPanel;
-    private List<Product> products = new List<Product>();
+    private List<Product> Products { get; set; }
     private decimal currentBalance = 0;
     private decimal earnedMoney = 0;
-
+    
     public VendingMachine(Admin admin)
     {
         adminPanel = new AdminPanel(this, admin);
+        Products = new List<Product>();
+    }
+    public VendingMachine(Admin admin, List<Product> products)
+    {
+        adminPanel = new AdminPanel(this, admin);
+        Products = products;
+    }
+
+    public void SetProducts(List<Product> products)
+    {
+        Products = products;
     }
 
     public void TurnOn()
@@ -21,7 +32,7 @@ public class VendingMachine : IVendingMachine
         while (true)
         {
             Console.Clear();
-            Console.WriteLine("Вендинговый автомат");
+            DisplayVendingMachine();
             Console.WriteLine("1. Посмотреть товары");
             Console.WriteLine("2. Внести монету");
             Console.WriteLine("3. Выбрать товар");
@@ -86,27 +97,30 @@ public class VendingMachine : IVendingMachine
                     Console.WriteLine("Такой команды нет, попробуйте ещё раз");
                     break;
             }
+            
+            Console.WriteLine("\nНажмите любую клавишу для продолжения...");
+            Console.ReadKey();
         }
     }
 
     public void AddProduct(Product product)
     {
-        products.Add(product);
+        Products.Add(product);
     }
-    
+
     public List<Product> GetProducts()
     {
-        return products;
+        return Products;
     }
 
     public void DisplayProducts()
     {
-        if (products.Count > 0)
+        if (Products.Count > 0)
         {
-            Console.WriteLine("Доступные продукты");
-            for (int i = 0; i < products.Count; i++)
+            Console.WriteLine("Доступные товары:");
+            for (int i = 0; i < Products.Count; i++)
             {
-                var product = products[i];
+                var product = Products[i];
                 Console.WriteLine($"{i + 1} | {product.Name} | {product.Price} руб.");
             }
         }
@@ -115,6 +129,37 @@ public class VendingMachine : IVendingMachine
             Console.WriteLine("Автомат пуст.");
         }
     }
+
+    public void DisplayVendingMachine()
+         {
+             const int columnWidth = 30;
+             const string separator = "|-------------------------------|";
+         
+             Console.WriteLine(separator);
+             Console.WriteLine("|      ВЕНДИНГОВЫЙ АВТОМАТ      |");
+             Console.WriteLine(separator);
+         
+             for (int i = 0; i < Products.Count; i++)
+             {
+                 var product = Products[i];
+             
+                 // Первая строка товара
+                 Console.Write($"| {product.Icon} ");
+                 Console.Write(product.Name.PadRight(columnWidth - 4));
+                 Console.WriteLine(" |");
+             
+                 // Вторая строка товара
+                 string priceInfo = $"{i + 1} - {product.Price} руб.";
+                 Console.Write($"| {priceInfo.PadRight(columnWidth)}");
+                 Console.WriteLine("|");
+             
+                 Console.WriteLine(separator);
+             }
+         
+             // Строка с балансом
+             Console.WriteLine($"| Баланс: {currentBalance} руб.{new string(' ', columnWidth - 14 - currentBalance.ToString().Length)} |");
+             Console.WriteLine(separator);
+         }
 
     public void InsertCoin(decimal value)
     {
@@ -125,21 +170,27 @@ public class VendingMachine : IVendingMachine
     public void SelectProduct(int productIndex)
     {
         // Ошибки
-        if (productIndex < 0 || productIndex >= products.Count)
+        if (Products.Count == 0)
+        {
+            Console.WriteLine("Автомат пуст.");
+            return;
+        }
+        
+        if (productIndex < 0 || productIndex >= Products.Count)
         {
             Console.WriteLine("Неверный номер продукта!");
             return;
         }
-        
-        var product = products[productIndex];
-        
+
+        var product = Products[productIndex];
+
         // Проверяем сколько осталось
         if (product.Count <= 0)
         {
             Console.WriteLine("Этот товар закончился.");
             return;
         }
-        
+
         // Покупка
         if (currentBalance >= product.Price)
         {
@@ -162,6 +213,7 @@ public class VendingMachine : IVendingMachine
             Console.WriteLine($"Сдача {currentBalance} руб.");
             currentBalance = 0;
         }
+
         Console.WriteLine("Спасибо за покупку!");
     }
 
@@ -175,6 +227,7 @@ public class VendingMachine : IVendingMachine
     {
         return earnedMoney;
     }
+
     public void CollectEarnedMoney()
     {
         // Как бы забираем прибыль

@@ -14,9 +14,13 @@ public class AdminPanel
 
     public void Login(string login, string password)
     {
-        if (login == _admin.Password && password == _admin.Password)
+        if (login == _admin.Login && password == _admin.Password)
         {
             ShowMenu();
+        }
+        else
+        {
+            Console.WriteLine("Неверный логин или пароль");
         }
     }
     
@@ -26,7 +30,7 @@ public class AdminPanel
         {
             Console.Clear();
             Console.WriteLine("АДМИН ПАНЕЛЬ");
-            Console.WriteLine($"> {_admin.Login}");
+            Console.WriteLine($"> login: {_admin.Login}");
             
             Console.WriteLine("1. Добавить товар");
             Console.WriteLine("2. Пополнить количество товара");
