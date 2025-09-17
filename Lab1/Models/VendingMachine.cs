@@ -3,6 +3,7 @@
 using System;
 using System.Collections.Generic;
 using Interfaces;
+using Utils;
 
 public class VendingMachine : IVendingMachine
 {
@@ -130,7 +131,22 @@ public class VendingMachine : IVendingMachine
             for (int i = 0; i < Products.Count; i++)
             {
                 var product = Products[i];
-                Console.WriteLine($"{i + 1} | {product.Name} | {product.Price} руб.");
+                Console.Write($"{i + 1} - {product.Name} - {product.Price} руб. | ");
+                
+                // Разные цвета для разного количества
+                Console.ForegroundColor = ConsoleColor.Green;
+                if (product.Count < 5)
+                {
+                    Console.ForegroundColor = ConsoleColor.Yellow;
+                }
+                else if (product.Count == 1)
+                {
+                    Console.ForegroundColor = ConsoleColor.Red;
+                }
+                Console.Write($"{product.Count} шт.");
+                
+                Console.ResetColor();
+                Console.WriteLine();
             }
         }
         else
@@ -140,35 +156,41 @@ public class VendingMachine : IVendingMachine
     }
 
     public void DisplayVendingMachine()
+     {
+         const int columnWidth = 30;
+         const string separator = "|-------------------------------|";
+
+         var vmColor = ConsoleColor.Black;
+         Console.ForegroundColor = vmColor;
+         
+         // Автомат
+         Console.WriteLine(separator);
+         ConsoleUtils.WriteLine("|      ВЕНДИНГОВЫЙ АВТОМАТ      |");
+         ConsoleUtils.WriteLine(separator, vmColor);
+     
+         for (int i = 0; i < Products.Count; i++)
          {
-             const int columnWidth = 30;
-             const string separator = "|-------------------------------|";
+             var product = Products[i];
          
-             Console.WriteLine(separator);
-             Console.WriteLine("|      ВЕНДИНГОВЫЙ АВТОМАТ      |");
-             Console.WriteLine(separator);
+             // Первая строка товара
+             ConsoleUtils.Write($"| {product.Icon} ");
+             ConsoleUtils.Write(product.Name.PadRight(columnWidth - 4));
+             ConsoleUtils.WriteLine(" |");
          
-             for (int i = 0; i < Products.Count; i++)
-             {
-                 var product = Products[i];
-             
-                 // Первая строка товара
-                 Console.Write($"| {product.Icon} ");
-                 Console.Write(product.Name.PadRight(columnWidth - 4));
-                 Console.WriteLine(" |");
-             
-                 // Вторая строка товара
-                 string priceInfo = $"{i + 1} - {product.Price} руб.";
-                 Console.Write($"| {priceInfo.PadRight(columnWidth)}");
-                 Console.WriteLine("|");
-             
-                 Console.WriteLine(separator);
-             }
+             // Вторая строка товара
+             string priceInfo = $"{i + 1} - {product.Price} руб.";
+             Console.Write($"| {priceInfo.PadRight(columnWidth)}");
+             ConsoleUtils.WriteLine("|", vmColor);
          
-             // Строка с балансом
-             Console.WriteLine($"| Баланс: {currentBalance} руб.{new string(' ', columnWidth - 14 - currentBalance.ToString().Length)} |");
-             Console.WriteLine(separator);
+             ConsoleUtils.WriteLine(separator, vmColor);
          }
+     
+         // Строка с балансом
+         Console.ForegroundColor = ConsoleColor.Green;
+         Console.WriteLine($"| Баланс: {currentBalance} руб.{new string(' ', columnWidth - 14 - currentBalance.ToString().Length)} |");
+         Console.ResetColor();
+         ConsoleUtils.WriteLine(separator, vmColor);
+     }
 
     public void InsertCoin(decimal value)
     {
