@@ -92,6 +92,15 @@ public class VendingMachine : IVendingMachine
 
                 case "0":
                     return;
+                
+                case "admin":
+                    Console.Write("Login: ");
+                    string login = Console.ReadLine();
+                    Console.Write("Password: ");
+                    string password = Console.ReadLine();
+                    
+                    LoginViaAdmin(login, password);
+                    break;
 
                 default:
                     Console.WriteLine("Такой команды нет, попробуйте ещё раз");
