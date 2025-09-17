@@ -1,0 +1,9 @@
+C:\Users\name8\RiderProjects\OOP\Lab1\obj\Debug\Lab1.csproj.AssemblyReference.cache
+C:\Users\name8\RiderProjects\OOP\Lab1\obj\Debug\Lab1.csproj.CoreCompileInputs.cache
+C:\Users\name8\RiderProjects\OOP\Lab1\bin\Debug\Lab1.exe
+C:\Users\name8\RiderProjects\OOP\Lab1\bin\Debug\Lab1.pdb
+C:\Users\name8\RiderProjects\OOP\Lab1\obj\Debug\Lab1.exe
+C:\Users\name8\RiderProjects\OOP\Lab1\obj\Debug\Lab1.pdb
+C:\Users\name8\RiderProjects\OOP\Lab1\bin\Debug\Utils.dll
+C:\Users\name8\RiderProjects\OOP\Lab1\bin\Debug\Utils.pdb
+C:\Users\name8\RiderProjects\OOP\Lab1\obj\Debug\Lab1.csproj.Up2Date
