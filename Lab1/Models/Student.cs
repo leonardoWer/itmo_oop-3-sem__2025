@@ -12,6 +12,10 @@ public class Student
         Name = name;
         Surname = surname;
     }
+    
+    public Student(int id, string name)
+        : this(id, name, "")
+    {}
 
     public override string ToString()
     {

@@ -17,6 +17,9 @@ public class Teacher
         Name = name;
         Surname = surname;
     }
+    public Teacher(int id, string name)
+    : this(id, name, "") 
+    {}
 
     public String GetFIO()
     {
