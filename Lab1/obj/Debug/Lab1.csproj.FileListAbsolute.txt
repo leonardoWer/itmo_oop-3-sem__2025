@@ -4,3 +4,6 @@ C:\Users\name8\RiderProjects\OOP\Lab1\obj\Debug\Lab1.csproj.AssemblyReference.ca
 C:\Users\name8\RiderProjects\OOP\Lab1\obj\Debug\Lab1.csproj.CoreCompileInputs.cache
 C:\Users\name8\RiderProjects\OOP\Lab1\obj\Debug\Lab1.exe
 C:\Users\name8\RiderProjects\OOP\Lab1\obj\Debug\Lab1.pdb
+C:\Users\name8\RiderProjects\OOP\Lab1\bin\Debug\xunit.dll
+C:\Users\name8\RiderProjects\OOP\Lab1\bin\Debug\xunit.xml
+C:\Users\name8\RiderProjects\OOP\Lab1\obj\Debug\Lab1.csproj.Up2Date

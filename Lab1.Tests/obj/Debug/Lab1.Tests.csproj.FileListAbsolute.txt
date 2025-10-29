@@ -1,0 +1,11 @@
+C:\Users\name8\RiderProjects\OOP\Lab1.Tests\obj\Debug\Lab1.Tests.csproj.AssemblyReference.cache
+C:\Users\name8\RiderProjects\OOP\Lab1.Tests\obj\Debug\Lab1.Tests.csproj.CoreCompileInputs.cache
+C:\Users\name8\RiderProjects\OOP\Lab1.Tests\bin\Debug\Lab1.Tests.dll
+C:\Users\name8\RiderProjects\OOP\Lab1.Tests\bin\Debug\Lab1.Tests.pdb
+C:\Users\name8\RiderProjects\OOP\Lab1.Tests\bin\Debug\Lab1.exe
+C:\Users\name8\RiderProjects\OOP\Lab1.Tests\bin\Debug\xunit.dll
+C:\Users\name8\RiderProjects\OOP\Lab1.Tests\bin\Debug\Lab1.pdb
+C:\Users\name8\RiderProjects\OOP\Lab1.Tests\bin\Debug\xunit.xml
+C:\Users\name8\RiderProjects\OOP\Lab1.Tests\obj\Debug\Lab1.Tests.csproj.Up2Date
+C:\Users\name8\RiderProjects\OOP\Lab1.Tests\obj\Debug\Lab1.Tests.dll
+C:\Users\name8\RiderProjects\OOP\Lab1.Tests\obj\Debug\Lab1.Tests.pdb

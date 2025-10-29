@@ -7,8 +7,8 @@ namespace Lab1.Models;
 public class Teacher
 {
     public int Id { get; set; }
-    private string Name { get; set; }
-    private string Surname { get; set; }
+    public string Name { get; set; }
+    public string Surname { get; set; }
     public List<Course> CoursesTaught { get; set; } = new List<Course>();
     
     public Teacher(int id, string name, string surname)

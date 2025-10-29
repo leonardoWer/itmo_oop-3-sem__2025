@@ -6,8 +6,8 @@ using System;
 public abstract class Course
 {
     public int Id { get; set; }
-    private string Title { get; set; }
-    private string Description { get; set; }
+    public string Title { get; set; }
+    public string Description { get; set; }
     public List<Student> EnrolledStudents { get; set; } = new List<Student>();
     public Teacher? AssignedTeacher { get; set; }
 
