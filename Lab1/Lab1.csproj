@@ -41,12 +41,14 @@
         <Reference Include="System.Xml"/>
     </ItemGroup>
     <ItemGroup>
+        <Compile Include="Models\Course.cs" />
+        <Compile Include="Models\Student.cs" />
+        <Compile Include="Models\Teacher.cs" />
         <Compile Include="Program.cs"/>
         <Compile Include="Properties\AssemblyInfo.cs"/>
     </ItemGroup>
     <ItemGroup>
       <Folder Include="Interfaces\" />
-      <Folder Include="Models\" />
     </ItemGroup>
     <ItemGroup>
       <Content Include="README.md" />
