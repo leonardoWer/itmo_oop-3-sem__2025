@@ -1,11 +1,12 @@
 using System;
 using System.Collections.Generic;
+using Lab1.Models.Abstract;
 
 namespace Lab1.Models;
 
 public class Teacher
 {
-    private int Id { get; set; }
+    public int Id { get; set; }
     private string Name { get; set; }
     private string Surname { get; set; }
     public List<Course> CoursesTaught { get; set; } = new List<Course>();

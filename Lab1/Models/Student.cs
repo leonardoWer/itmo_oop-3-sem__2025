@@ -2,7 +2,7 @@ namespace Lab1.Models;
 
 public class Student
 {
-    private int Id { get; set; }
+    public int Id { get; set; }
     private string Name { get; set; }
     private string Surname { get; set; }
 
