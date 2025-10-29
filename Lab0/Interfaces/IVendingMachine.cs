@@ -1,8 +1,8 @@
-﻿using Lab1.Models;
+﻿using Lab0.Models;
 
 using System.Collections.Generic;
 
-namespace Lab1.Interfaces;
+namespace Lab0.Interfaces;
 
 public interface IVendingMachine
 {
