@@ -41,6 +41,7 @@
         <Reference Include="System.Xml"/>
     </ItemGroup>
     <ItemGroup>
+        <Compile Include="Interfaces\ICourseService.cs" />
         <Compile Include="Models\Abstract\Course.cs" />
         <Compile Include="Models\OfflineCourse.cs" />
         <Compile Include="Models\OnlineCourse.cs" />
@@ -48,9 +49,7 @@
         <Compile Include="Models\Teacher.cs" />
         <Compile Include="Program.cs"/>
         <Compile Include="Properties\AssemblyInfo.cs"/>
-    </ItemGroup>
-    <ItemGroup>
-      <Folder Include="Interfaces\" />
+        <Compile Include="Services\CourseService.cs" />
     </ItemGroup>
     <ItemGroup>
       <Content Include="README.md" />

@@ -5,11 +5,11 @@ using System;
 
 public abstract class Course
 {
-    private int Id { get; set; }
+    public int Id { get; set; }
     private string Title { get; set; }
     private string Description { get; set; }
-    private List<Student> EnrolledStudents { get; set; } = new List<Student>();
-    private Teacher? AssignedTeacher { get; set; }
+    public List<Student> EnrolledStudents { get; set; } = new List<Student>();
+    public Teacher? AssignedTeacher { get; set; }
 
     public Course(int id, string title, string description)
     {
@@ -20,6 +20,12 @@ public abstract class Course
 
     public Course(int id, string title)
         : this(id, title, ""){}
+
+    public void ClearCourse()
+    {
+        AssignedTeacher?.CoursesTaught.Remove(this);
+        EnrolledStudents.Clear();
+    }
     
     // Описание специфики курса
     public virtual string GetCourseDetails()
