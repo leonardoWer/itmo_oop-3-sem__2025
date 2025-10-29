@@ -1,7 +1,7 @@
 using System.Collections.Generic;
-using Lab1.Models;
+using Lab0.Models;
 
-namespace Lab1
+namespace Lab0
 {
     internal class Program
     {
