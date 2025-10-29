@@ -11,6 +11,8 @@ using Lab1.Models.Abstract;
 
 public class CourseService : ICourseService
 {
+    private static CourseService? _instance;
+    
     private readonly List<Course> _courses = new List<Course>();
     private readonly List<Teacher> _teachers = new List<Teacher>();
     private readonly List<Student> _students = new List<Student>();
@@ -18,6 +20,15 @@ public class CourseService : ICourseService
     private int _nextCourseId = 1;
     private int _nextTeacherId = 1;
     private int _nextStudentId = 1;
+    
+    public static CourseService GetInstance()
+    {
+        if (_instance == null)
+        {
+            _instance = new CourseService();
+        }
+        return _instance;
+    }
     
     private Teacher? FindTeacherById(int teacherId)
     {

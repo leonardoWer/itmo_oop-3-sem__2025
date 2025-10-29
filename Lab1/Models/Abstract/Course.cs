@@ -36,6 +36,6 @@ public abstract class Course
     public override string ToString()
     {
         string teacherInfo = AssignedTeacher == null ? "Преподаватель не назначен" : AssignedTeacher.GetFIO();
-        return $"Курс [{Id}]: {Title}; Teacher: {teacherInfo} | Количество учащихся: {EnrolledStudents.Count}";
+        return $"Курс [{Id}]: {Title}; Преподаватель: {teacherInfo} | Количество учащихся: {EnrolledStudents.Count}";
     }
 }

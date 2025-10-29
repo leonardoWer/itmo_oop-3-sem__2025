@@ -5,14 +5,14 @@ namespace Lab1.Models;
 public class OnlineCourse : Course
 {
     private string Platform {get; set;}
-    private string AccessUrl {get; set;}
+    private string Url {get; set;}
 
     public OnlineCourse(int id, string title, string descr,
         string platform, string accessUrl)
         : base(id, title, descr)
     {
         Platform = platform;
-        AccessUrl = accessUrl;
+        Url = accessUrl;
     }
     
     public OnlineCourse(int id, string title,
@@ -22,7 +22,7 @@ public class OnlineCourse : Course
     
     public override string GetCourseDetails()
     {
-        return $"Онлайн {base.ToString()}: Платформа - {Platform}, Ссылка на занятия - {AccessUrl}";
+        return $"Онлайн {base.ToString()}: Платформа - {Platform}, Ссылка на занятия - {Url}";
     }
 
     public override string ToString()

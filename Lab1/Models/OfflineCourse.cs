@@ -21,7 +21,7 @@ public class OfflineCourse : Course
     
     public override string GetCourseDetails()
     {
-        return $"Онлайн {base.ToString()}: Локация {Location}, Расписание - {Schedule}";
+        return $"Очный {base.ToString()}: Локация {Location}, Расписание - {Schedule}";
     }
 
     public override string ToString()
