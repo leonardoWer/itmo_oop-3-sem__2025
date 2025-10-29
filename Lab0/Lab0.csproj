@@ -5,11 +5,11 @@
     <PropertyGroup>
         <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
         <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-        <ProjectGuid>{43C0D236-2665-4260-A19F-9EC93728D421}</ProjectGuid>
+        <ProjectGuid>{E664A2FB-8664-4F7C-BD12-CC0C56343EDB}</ProjectGuid>
         <OutputType>Exe</OutputType>
         <AppDesignerFolder>Properties</AppDesignerFolder>
-        <RootNamespace>Lab1</RootNamespace>
-        <AssemblyName>Lab1</AssemblyName>
+        <RootNamespace>Lab0</RootNamespace>
+        <AssemblyName>Lab0</AssemblyName>
         <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
         <LangVersion>latest</LangVersion>
         <FileAlignment>512</FileAlignment>
@@ -41,12 +41,17 @@
         <Reference Include="System.Xml"/>
     </ItemGroup>
     <ItemGroup>
+        <Compile Include="Interfaces\IVendingMachine.cs" />
+        <Compile Include="Models\Admin.cs" />
+        <Compile Include="Models\AdminPanel.cs" />
+        <Compile Include="Models\Product.cs" />
+        <Compile Include="Models\VendingMachine.cs" />
         <Compile Include="Program.cs"/>
         <Compile Include="Properties\AssemblyInfo.cs"/>
     </ItemGroup>
     <ItemGroup>
-      <Folder Include="Interfaces\" />
-      <Folder Include="Models\" />
+      <Content Include="README.md" />
+      <ProjectReference Include="..\Utils\Utils.csproj" />
     </ItemGroup>
     <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets"/>
     <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
