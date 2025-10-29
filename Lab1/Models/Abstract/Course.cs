@@ -1,4 +1,4 @@
-namespace Lab1.Models;
+namespace Lab1.Models.Abstract;
 
 using System.Collections.Generic;
 using System;

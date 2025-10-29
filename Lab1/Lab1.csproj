@@ -41,7 +41,9 @@
         <Reference Include="System.Xml"/>
     </ItemGroup>
     <ItemGroup>
-        <Compile Include="Models\Course.cs" />
+        <Compile Include="Models\Abstract\Course.cs" />
+        <Compile Include="Models\OfflineCourse.cs" />
+        <Compile Include="Models\OnlineCourse.cs" />
         <Compile Include="Models\Student.cs" />
         <Compile Include="Models\Teacher.cs" />
         <Compile Include="Program.cs"/>
