@@ -7,3 +7,5 @@ C:\Users\name8\RiderProjects\OOP\Lab0\obj\Debug\Lab0.csproj.CoreCompileInputs.ca
 C:\Users\name8\RiderProjects\OOP\Lab0\obj\Debug\Lab0.csproj.Up2Date
 C:\Users\name8\RiderProjects\OOP\Lab0\obj\Debug\Lab0.exe
 C:\Users\name8\RiderProjects\OOP\Lab0\obj\Debug\Lab0.pdb
+C:\Users\name8\RiderProjects\OOP\Lab0\bin\Debug\xunit.dll
+C:\Users\name8\RiderProjects\OOP\Lab0\bin\Debug\xunit.xml
