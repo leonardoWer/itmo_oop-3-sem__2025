@@ -4,3 +4,6 @@ C:\Users\name8\RiderProjects\OOP\Utils\bin\Debug\Utils.dll
 C:\Users\name8\RiderProjects\OOP\Utils\bin\Debug\Utils.pdb
 C:\Users\name8\RiderProjects\OOP\Utils\obj\Debug\Utils.dll
 C:\Users\name8\RiderProjects\OOP\Utils\obj\Debug\Utils.pdb
+C:\Users\name8\RiderProjects\OOP\Utils\bin\Debug\xunit.dll
+C:\Users\name8\RiderProjects\OOP\Utils\bin\Debug\xunit.xml
+C:\Users\name8\RiderProjects\OOP\Utils\obj\Debug\Utils.csproj.Up2Date
