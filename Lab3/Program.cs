@@ -50,6 +50,7 @@ namespace Lab3
             Console.WriteLine(pricingContext.GetStrategyInfo());
             Console.WriteLine($"Для лояльного клиента: {pricingContext.CalculatePrice(expressOrder)}");
             
+            
             // Состояние (State) для отслеживания статуса у заказа
             Console.WriteLine($"Текущий статус заказа #{standardOrder.Id}: {standardOrder.State.GetStatusName()}");
             // Можем переходить к следующему этапу, но не знаем что это за этап
@@ -71,6 +72,7 @@ namespace Lab3
         
             orderSubject.Notify("Заказ создан и обрабатывается");
         
+            
             // Декоратор для дополнительных услуг к заказу
             IOrderComponent orderComponent1 = new OrderBase(standardOrder);
             IOrderComponent orderComponent2 = new OrderBase(expressOrder);
@@ -78,6 +80,7 @@ namespace Lab3
             Console.WriteLine($"Базовая стоимость: {orderComponent1.GetCost()}");
             Console.WriteLine($"Опции: {string.Join(", ", orderComponent1.GetFeatures())}");
         
+            
             // Добавляем опции
             orderComponent1 = new GiftDecorator(orderComponent1); // Добавляем подарочную обёртку
             orderComponent2 = new UrgentDecorator(orderComponent2); // Добавляем приоритеот
@@ -110,13 +113,11 @@ namespace Lab3
                 customer1,
                 DeliveryType.Standard
             );
-        
             var updateStatusCommand = new UpdateOrderStatusCommand(
                 orderService,
                 standardOrder.Id,
                 OrderStatus.Preparing
             );
-        
             var cancelOrderCommand = new CancelOrderCommand(
                 orderService,
                 expressOrder.Id
