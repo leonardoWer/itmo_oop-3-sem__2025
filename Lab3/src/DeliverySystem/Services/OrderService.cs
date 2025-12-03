@@ -17,7 +17,7 @@ public class OrderService : IOrderService
         { "express", new ExpressOrderFactory() }
     };
 
-    public Order CreateOrder(Customer customer, List<OrderItem> items, DeliveryType deliveryType, 
+    public Order CreateOrder(List<OrderItem> items, Customer customer, DeliveryType deliveryType, 
         string orderType = "standard")
     {
         if (!_factories.ContainsKey(orderType.ToLower()))

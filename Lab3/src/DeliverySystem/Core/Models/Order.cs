@@ -37,7 +37,7 @@ public abstract class Order
         Status = newStatus;
     }
 
-    protected abstract decimal CalculateTotal();
+    public abstract decimal CalculateTotal();
     
     // Разная логика в зависимости от состояния
     public void Process() => State.ProcessOrder(this);
