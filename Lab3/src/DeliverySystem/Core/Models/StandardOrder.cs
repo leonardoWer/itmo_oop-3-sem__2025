@@ -6,10 +6,10 @@ namespace Lab3.DeliverySystem.Core.Models;
 public class StandardOrder : Order
 {
     public StandardOrder(int id, List<OrderItem> items, Customer customer, DeliveryType deliveryType) 
-        : base(id, customer, items, deliveryType)
+        : base(id, items, customer, deliveryType)
     {}
     
-    protected override decimal CalculateTotal()
+    public override decimal CalculateTotal()
     {
         decimal itemsTotal = Items.Sum(item => item.GetTotalPrice());
         decimal tax = itemsTotal * TaxConstants.STANDARD_TAX;

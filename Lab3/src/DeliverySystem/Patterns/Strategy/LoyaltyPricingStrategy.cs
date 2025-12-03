@@ -10,9 +10,9 @@ public class LoyaltyPricingStrategy : IPricingStrategy
     {
         decimal itemsTotal = order.Items.Sum(item => item.GetTotalPrice());
         decimal tax = itemsTotal * TaxConstants.STANDARD_TAX;
-        decimal deliveryFee = GetDeliveryCost(order);
-        decimal total = itemsTotal + tax + deliveryFee;
-            
+        decimal deliveryCost = GetDeliveryCost(order);
+        decimal total = itemsTotal + tax + deliveryCost;
+        
         // Скидка для лояльных клиентов
         if (order.Customer.IsLoyaltyMember)
         {
@@ -39,8 +39,5 @@ public class LoyaltyPricingStrategy : IPricingStrategy
         };
     }
 
-    public string GetStrategyName()
-    {
-        throw new NotImplementedException();
-    }
+    public string GetStrategyName() => $"Скидка {LoyaltyConstants.LOYALTY_DISCOUNT * 100}% для постоянных посетителей";
 }
